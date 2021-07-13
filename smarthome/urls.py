@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.getAllSensor),
+    path('control_temp/', views.control_temp),
 ]
