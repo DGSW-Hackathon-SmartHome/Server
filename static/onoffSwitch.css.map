@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "onoffSwitch.css",
+	"sources": [
+		"onoffSwitch.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,cAAc,CAAC,EACX,QAAQ,EAAE,IAAI,GACjB"
+}
