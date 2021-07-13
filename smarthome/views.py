@@ -1,5 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt    # csrf 비활성화 라이브러리
+from django.utils.decorators import method_decorator    # csrf 비활성화를 위한 메서드, 클래스 데코레이터
 
+@method_decorator(csrf_exempt, name='dispatch')
 def getAllSensor(request):
     returnValue = {
         "gas": {
@@ -24,11 +27,11 @@ def getAllSensor(request):
 
     return render(request, 'index.html', returnValue)
 
-def gasPost(request):
-    if request.method == "POST":
-        some_var = request.POST.getlist('gasOnOff[]')
-        content = {
-            "onOff": some_var,
-            "ONOFF": "on",
-        }
-    return redirect('main/')
+# def gasPost(request):
+#     if request.method == "POST":
+#         some_var = request.POST.getlist('gasOnOff[]')
+#         content = {
+#             "onOff": some_var,
+#             "ONOFF": "on",
+#         }
+#     return redirect('main/')
