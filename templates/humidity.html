@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load sass_tags %}
+
+    <link href="{% sass_src 'css/navbar.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'css/sensor.scss' %}" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body>
+    <ul class="nav-container">
+        <li class="nav-item"> <a href="">Auto Mode</a> </li>
+        <li class="nav-item"> <a href="/">Semi Mode</a> </li>
+    </ul>
+    
+    
+    <div class="all-sensor">
+        <form action="" method="POST">
+            <div class="sensor_value">
+                습도: {{ humidity }}%
+{% if humidifier == 1 %}
+                <input class="sensor">
+                    가습기: 켜져있음
+                    <input class="submit-button" type="submit" name="humidifier_mode" value="ON" />
+                </div>
+{% else %}
+                <div class="sensor">
+                    가습기: 꺼져있음
+                    <input class="submit-button" type="submit" name="humidifier_mode" value="OFF" />
+                </div>
+{% endif %}
+            </div>
+        </form>
+        <form action="" method="POST">
+{% if dehumidifier == 1 %}
+            <div class="sensor">
+                제습기: 켜져있음
+                <input class="submit-button" type="submit" name="dehumidifier_mode" value="ON"/>
+            </div>
+{% else %}
+            <div class="sensor">
+                제습기: 꺼져있음
+                <input class="submit-button" type="submit" name="dehumidifier_mode" value="OFF"/>
+            </div>
+{% endif %}
+        </form>
+    </div>
+</body>
+</html>

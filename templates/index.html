@@ -6,70 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {% load sass_tags %}
-    <link href="{% sass_src 'sensor.scss' %}" rel="stylesheet" type="text/css" />
-    <link href="{% sass_src 'navbar.scss' %}" rel="stylesheet" type="text/css" />
-    <link href="{% sass_src 'style.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'css/sensor.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'css/navbar.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'css/style.scss' %}" rel="stylesheet" type="text/css" />
     <title>Document</title>
 </head>
 <body>
     <ul class="nav-container">
-        <li class="nav-item"> <a href="">Main</a> </li>
         <li class="nav-item"> <a href="">Auto Mode</a> </li>
         <li class="nav-item"> <a href="">Semi Mode</a> </li>
     </ul>
 
-    <div class="all_sensor">
-        <form action="" method="POST">
-            <div class="sensor">
-                <div class="sensor_value">
-                    가스: {{ gas.value }}
-                    {% csrf_token %}
-                    <input class="submit-button" type="submit" name="gasOnOff[]"/>
-                </div>
-            </div>
-        </form>
+    <div class="all-sensor">
 
-        <form action="" method="POST">
-            <div class="sensor">
-                <div class="sensor_value">
-                    온도: {{ temperature.value }}
-                    {% csrf_token %}
-                    <input class="submit-button" class="submit-button" type="submit" name="gasOnOff[]"/>
-                </div>
-            </div>
-        </form>
+        <a href="control_temp/" class="sensor-value">
+            <div class="sensor_value">온도: {{ temperature }}℃</div>
+        </a>
         
+        <a href="control_humidity/" class="sensor-value">
+            <div class="sensor_value">습도: {{ humidity }}%</div>
+        </a>
         
-        <form action="" method="POST">
-            <div class="sensor">
-                <div class="sensor_value">
-                    습도: {{ humidity.value }}
-                    {% csrf_token %}
-                    <input class="submit-button" type="submit" name="gasOnOff[]"/>
-                </div>
-            </div>
-        </form>
-        
-        
-        <form action="" method="POST">
-            <div class="sensor">
-                <div class="sensor_value">
-                    전등: {{ led.onoff }}
-                    {% csrf_token %}
-                    <input class="submit-button" type="submit" name="gasOnOff[]"/>
-                </div>
-            </div>
-        </form>
-        
-        <form action="" method="POST">
-            <div class="sensor">
-                <div class="sensor_value">
-                    환풍기: {{ fan.onoff }}
-                    {% csrf_token %}
-                    <input class="submit-button" type="submit" name="gasOnOff[]"/>
-                </div>
-            </div>
-        </form>
+        <a href="control_led/" class="sensor-value">
+            <div class="sensor_value">전등 상태 확인하러 가기</div>
+        </a>
+
+        <a href="" class="sensor-value">
+            <div class="sensor_value">가스 상태 확인하러 가기</div>
+        </a>
+
+        <a href="" class="sensor-value">
+            <div class="sensor_value">미세 먼지 상태 확인하러 가기</div>
+        </a>
     </div>
 </body>
 </html>
