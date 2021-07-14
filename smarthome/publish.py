@@ -11,117 +11,117 @@ class mqtt_publish():
     def temperature(cmd):
         if cmd == 'aircon_on':
             j = {
-                "type" : "aircon",
-                "cmd" : "on"
+                "type": "aircon",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/temperature", json.dumps(j).encode())
         elif cmd == 'aircon_off':
             j = {
-                "type" : "aircon",
-                "cmd" : "off"
+                "type": "aircon",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/temperature", json.dumps(j).encode())
         elif cmd == 'boiler_on':
             j = {
-                "type" : "boiler",
-                "cmd" : "on"
+                "type": "boiler",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/temperature", json.dumps(j).encode())
         elif cmd == 'boiler_off':
             j = {
-                "type" : "boiler",
-                "cmd" : "off"
+                "type": "boiler",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/temperature", json.dumps(j).encode())
-        
+
     def humidity(cmd):
         if cmd == 'dehumidifier_on':
             j = {
-                "type" : "dehumidifier",
-                "cmd" : "on"
+                "type": "dehumidifier",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/humidity", json.dumps(j).encode())
         elif cmd == 'dehumidifier_off':
             j = {
-                "type" : "dehumidifier",
-                "cmd" : "off"
+                "type": "dehumidifier",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/humidity", json.dumps(j).encode())
         elif cmd == 'humidifier_on':
             j = {
-                "type" : "humidifier",
-                "cmd" : "on"
+                "type": "humidifier",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/humidity", json.dumps(j).encode())
         elif cmd == 'humidifier_off':
             j = {
-                "type" : "humidifier",
-                "cmd" : "off"
+                "type": "humidifier",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/humidity", json.dumps(j).encode())
-        
+
     def air(cmd):
         if cmd == 'fan_on':
             j = {
-                "type" : "fan",
-                "cmd" : "on"
+                "type": "fan",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/air", json.dumps(j).encode())
         elif cmd == 'fan_off':
             j = {
-                "type" : "fan",
-                "cmd" : "off"
+                "type": "fan",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/air", json.dumps(j).encode())
 
     def gasvalve(cmd):
         if cmd == 'gasvalve_on':
             j = {
-                "type" : "gasvalve",
-                "cmd" : "on"
+                "type": "gasvalve",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/gasValve", json.dumps(j).encode())
         elif cmd == 'gasvalve_off':
             j = {
-                "type" : "gasvalve",
-                "cmd" : "off"
+                "type": "gasvalve",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/gasValve", json.dumps(j).encode())
 
     def led(cmd):
         if cmd == 'livingroom_led_on':
             j = {
-                "type" : "livingroom",
-                "cmd" : "on"
+                "type": "livingroom",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
         elif cmd == 'livingroom_led_off':
             j = {
-                "type" : "livingroom",
-                "cmd" : "off"
+                "type": "livingroom",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
         elif cmd == 'room_led_on':
             j = {
-                "type" : "room",
-                "cmd" : "on"
+                "type": "room",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
         elif cmd == 'room_led_off':
             j = {
-                "type" : "room",
-                "cmd" : "off"
+                "type": "room",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
         elif cmd == 'toilet_led_on':
             j = {
-                "type" : "toilet",
-                "cmd" : "on"
+                "type": "toilet",
+                "cmd": "on"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
         elif cmd == 'toilet_led_off':
             j = {
-                "type" : "toilet",
-                "cmd" : "off"
+                "type": "toilet",
+                "cmd": "off"
             }
             mqtt.publish("smarthome/sensor/led", json.dumps(j).encode())
